@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [CofeeShop]    Script Date: 26.02.2026 05:19:21 PM ******/
+/****** Object:  Database [CofeeShop]    Script Date: 27.02.2026 07:47:49 PM ******/
 CREATE DATABASE [CofeeShop]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -84,7 +84,7 @@ ALTER DATABASE [CofeeShop] SET QUERY_STORE (OPERATION_MODE = READ_WRITE, CLEANUP
 GO
 USE [CofeeShop]
 GO
-/****** Object:  Table [dbo].[Adresses]    Script Date: 26.02.2026 05:19:21 PM ******/
+/****** Object:  Table [dbo].[Adresses]    Script Date: 27.02.2026 07:47:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -101,7 +101,7 @@ CREATE TABLE [dbo].[Adresses](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Baristas]    Script Date: 26.02.2026 05:19:21 PM ******/
+/****** Object:  Table [dbo].[Baristas]    Script Date: 27.02.2026 07:47:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -117,7 +117,7 @@ CREATE TABLE [dbo].[Baristas](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Beverages]    Script Date: 26.02.2026 05:19:21 PM ******/
+/****** Object:  Table [dbo].[Beverages]    Script Date: 27.02.2026 07:47:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -132,7 +132,7 @@ CREATE TABLE [dbo].[Beverages](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Beverages_Sizes]    Script Date: 26.02.2026 05:19:21 PM ******/
+/****** Object:  Table [dbo].[Beverages_Sizes]    Script Date: 27.02.2026 07:47:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -148,7 +148,7 @@ CREATE TABLE [dbo].[Beverages_Sizes](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CofeeShops]    Script Date: 26.02.2026 05:19:21 PM ******/
+/****** Object:  Table [dbo].[CofeeShops]    Script Date: 27.02.2026 07:47:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -164,7 +164,7 @@ CREATE TABLE [dbo].[CofeeShops](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Customers]    Script Date: 26.02.2026 05:19:21 PM ******/
+/****** Object:  Table [dbo].[Customers]    Script Date: 27.02.2026 07:47:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -173,15 +173,16 @@ CREATE TABLE [dbo].[Customers](
 	[CustomerID] [int] IDENTITY(1,1) NOT NULL,
 	[name] [varchar](50) NOT NULL,
 	[email] [varchar](15) NOT NULL,
-	[loyal_points] [int] NOT NULL,
+	[loyal_points] [money] NOT NULL,
 	[id_MemberID] [int] NOT NULL,
+	[pasword] [varchar](50) NOT NULL,
  CONSTRAINT [PK_Customers] PRIMARY KEY CLUSTERED 
 (
 	[CustomerID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Extras]    Script Date: 26.02.2026 05:19:21 PM ******/
+/****** Object:  Table [dbo].[Extras]    Script Date: 27.02.2026 07:47:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -196,7 +197,7 @@ CREATE TABLE [dbo].[Extras](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Extras_Items]    Script Date: 26.02.2026 05:19:21 PM ******/
+/****** Object:  Table [dbo].[Extras_Items]    Script Date: 27.02.2026 07:47:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -212,7 +213,7 @@ CREATE TABLE [dbo].[Extras_Items](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Items]    Script Date: 26.02.2026 05:19:21 PM ******/
+/****** Object:  Table [dbo].[Items]    Script Date: 27.02.2026 07:47:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -228,7 +229,7 @@ CREATE TABLE [dbo].[Items](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Membership_Types]    Script Date: 26.02.2026 05:19:21 PM ******/
+/****** Object:  Table [dbo].[Membership_Types]    Script Date: 27.02.2026 07:47:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -242,7 +243,7 @@ CREATE TABLE [dbo].[Membership_Types](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Sizes]    Script Date: 26.02.2026 05:19:21 PM ******/
+/****** Object:  Table [dbo].[Sizes]    Script Date: 27.02.2026 07:47:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -257,7 +258,7 @@ CREATE TABLE [dbo].[Sizes](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Transactions]    Script Date: 26.02.2026 05:19:21 PM ******/
+/****** Object:  Table [dbo].[Transactions]    Script Date: 27.02.2026 07:47:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -267,7 +268,7 @@ CREATE TABLE [dbo].[Transactions](
 	[id_CostomerID] [int] NOT NULL,
 	[id_BaristaID] [int] NOT NULL,
 	[total_price] [money] NOT NULL,
-	[nr_loyal_points] [int] NOT NULL,
+	[nr_loyal_points] [money] NOT NULL,
 	[date] [datetime] NOT NULL,
  CONSTRAINT [PK_Transactions] PRIMARY KEY CLUSTERED 
 (
@@ -280,12 +281,12 @@ REFERENCES [dbo].[CofeeShops] ([CofeeShopID])
 GO
 ALTER TABLE [dbo].[Baristas] CHECK CONSTRAINT [FK_Baristas_CofeeShops]
 GO
-ALTER TABLE [dbo].[Beverages_Sizes]  WITH CHECK ADD  CONSTRAINT [FK_Beverages_Sizes_Beverages] FOREIGN KEY([Beverages_SizesID])
+ALTER TABLE [dbo].[Beverages_Sizes]  WITH CHECK ADD  CONSTRAINT [FK_Beverages_Sizes_Beverages] FOREIGN KEY([id_BeverageID])
 REFERENCES [dbo].[Beverages] ([BeverageID])
 GO
 ALTER TABLE [dbo].[Beverages_Sizes] CHECK CONSTRAINT [FK_Beverages_Sizes_Beverages]
 GO
-ALTER TABLE [dbo].[Beverages_Sizes]  WITH CHECK ADD  CONSTRAINT [FK_Beverages_Sizes_Sizes] FOREIGN KEY([Beverages_SizesID])
+ALTER TABLE [dbo].[Beverages_Sizes]  WITH CHECK ADD  CONSTRAINT [FK_Beverages_Sizes_Sizes] FOREIGN KEY([id_SizeID])
 REFERENCES [dbo].[Sizes] ([SizeID])
 GO
 ALTER TABLE [dbo].[Beverages_Sizes] CHECK CONSTRAINT [FK_Beverages_Sizes_Sizes]
