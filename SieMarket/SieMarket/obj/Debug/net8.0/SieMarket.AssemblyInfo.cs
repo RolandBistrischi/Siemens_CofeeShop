@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SieMarket")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa43ba673a4db28dae0655881c2b55c3a05d571f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eab5ef54ca4671b707f33f52352cdaef7b99f968")]
 [assembly: System.Reflection.AssemblyProductAttribute("SieMarket")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SieMarket")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

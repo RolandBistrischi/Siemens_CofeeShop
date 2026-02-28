@@ -10,7 +10,7 @@ namespace SieMarket.Classes
 
     internal class Service
     {
-        public required List<Customer> Customers_list { get; set; }
+        public List<Customer> Customers_list { get; set; }
         public List<Order> All_Orders { get; set; }
 
         public Service( List<Customer> customers, List<Order> all_orders )
