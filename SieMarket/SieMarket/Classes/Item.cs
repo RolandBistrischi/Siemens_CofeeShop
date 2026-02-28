@@ -9,14 +9,14 @@ namespace SieMarket.Classes
     internal class Item
     {
         public Product product { get; set; }
-        public int quantity_neded { get; set; }
+        public int quantity_needed { get; set; }
         public decimal unit_price { get; set; }
 
-        public Item( Product product, int quantity_neded, decimal unit_price )
+        public Item( Product product, int quantity_neded)
         {
             this.product = product;
-            this.quantity_neded = quantity_neded;
-            this.unit_price = unit_price;
+            this.quantity_needed = quantity_neded;
+            this.unit_price = product.price;
         }
     }
 }
